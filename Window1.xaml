@@ -1,0 +1,41 @@
+﻿<Window x:Class="FaceRecognizer.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FaceRecognizer"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="835" Left="0" Top="0" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <ItemsControl ItemsSource="{Binding Rects}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas>
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="{Binding ImageBMP}"/>
+                    </Canvas.Background>
+                </Canvas>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemContainerStyle>
+            <Style>
+                <Setter Property="Canvas.Left" Value="{Binding ScaledLeft}"/>
+                <Setter Property="Canvas.Top" Value="{Binding ScaledTop}"/>
+            </Style>
+        </ItemsControl.ItemContainerStyle>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Rectangle Width="{Binding ScaledWidth}" Height="{Binding ScaledHeight}" Stroke="{Binding Color}" Fill="Transparent">
+                    <Rectangle.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding RectClickCommand}"/>
+                    </Rectangle.InputBindings>
+                </Rectangle>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    <Window.InputBindings>
+        <KeyBinding Key="C" Command="{Binding ExcuteCommand}"/>
+        <KeyBinding Key="C" Modifiers="Ctrl" Command="{Binding ExcuteCommandCapture}"/>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding SaveCommand}"/>
+        <KeyBinding Key="Esc" Command="{Binding EscapeCommand}"/>
+    </Window.InputBindings>
+</Window>

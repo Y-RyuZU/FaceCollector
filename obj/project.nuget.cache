@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "fSEUVu2CsFHC9LF6YqYvYPFTfErt+H2plD2apUWVQ3dIBVBYK5j8ABhjcBjbtquppLYOOeS+/dCDoGTvNJqC5A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\atsuk\\Desktop\\MinecraftDevelopments\\C#\\WpfApp1\\FaceRecognizer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\atsuk\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\atsuk\\.nuget\\packages\\opencvsharp4\\4.6.0.20220608\\opencvsharp4.4.6.0.20220608.nupkg.sha512",
+    "C:\\Users\\atsuk\\.nuget\\packages\\opencvsharp4.extensions\\4.6.0.20220608\\opencvsharp4.extensions.4.6.0.20220608.nupkg.sha512",
+    "C:\\Users\\atsuk\\.nuget\\packages\\opencvsharp4.runtime.win\\4.6.0.20220608\\opencvsharp4.runtime.win.4.6.0.20220608.nupkg.sha512",
+    "C:\\Users\\atsuk\\.nuget\\packages\\opencvsharp4.windows\\4.6.0.20220608\\opencvsharp4.windows.4.6.0.20220608.nupkg.sha512",
+    "C:\\Users\\atsuk\\.nuget\\packages\\opencvsharp4.wpfextensions\\4.6.0.20220608\\opencvsharp4.wpfextensions.4.6.0.20220608.nupkg.sha512",
+    "C:\\Users\\atsuk\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\atsuk\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\atsuk\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
