@@ -9,27 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace FaceRecognizer
-{
-    internal class BaseCommand : ICommand
-    {
+namespace FaceRecognizer {
+    internal class BaseCommand : ICommand {
         public event EventHandler? CanExecuteChanged;
 
         public ViewModel model { get; }
 
-        public BaseCommand(ViewModel model)
-        {
+        public BaseCommand(ViewModel model) {
             this.model = model;
         }
 
-        public bool CanExecute(object? parameter)
-        {
+        public bool CanExecute(object? parameter) {
             return true;
         }
 
-        public void Execute(object? parameter)
-        {
-            
+        public virtual void Execute(object? parameter) {
+
         }
     }
 }

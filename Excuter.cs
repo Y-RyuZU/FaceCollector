@@ -13,13 +13,11 @@ using System.Windows;
 using System.Windows.Forms;
 using Application = System.Windows.Application;
 using Rect = OpenCvSharp.Rect;
+using Size = OpenCvSharp.Size;
 
-namespace FaceRecognizer
-{
-    internal class Excuter
-    {
-        public static (Mat, Rect[]) Excute(bool save)
-        {
+namespace FaceRecognizer {
+    internal class Excuter {
+        public static (Mat, Rect[]) Excute(bool save) {
             var scale = Screen.PrimaryScreen.Bounds.Width / SystemParameters.PrimaryScreenWidth;
             var width = (int)(SystemParameters.VirtualScreenWidth * scale);
             var height = (int)(SystemParameters.VirtualScreenHeight * scale);
@@ -34,22 +32,21 @@ namespace FaceRecognizer
             Application.Current.MainWindow.Show();
 
             var mat = bitmap.ToMat();
-            using var cc = new CascadeClassifier("model/haarcascade_frontalface_default.xml");
+            using var cc = new CascadeClassifier("model/lbpcascade_animeface.xml");
 
             var time = DateTime.Now;
             var directory = "image/" + time.ToString("yyyy-MM-dd-HH-mm-ss-ff");
-            Directory.CreateDirectory(directory);
+            if (save) Directory.CreateDirectory(directory);
 
             bitmap.Save("capture.png", ImageFormat.Png);
 
             var i = 0;
-            var rects = cc.DetectMultiScale(mat, 1.05, 3);
-            if (save)
-            {
-                foreach (var rect in rects)
-                {
+            var rects = cc.DetectMultiScale(mat, 1.11, 3, HaarDetectionTypes.ScaleImage, new Size(200, 200));
+            if (save) {
+                foreach (var rect in rects) {
                     var cropped = mat.Clone(rect);
                     cropped.SaveImage(Path.Combine(directory, $"{i}.png"));
+                    cropped.SaveImage(Path.Combine("image/", $"{time.ToString("yyyy-MM-dd-HH-mm-ss-ff")}-{i}.png"));
                     i++;
                 }
             }
